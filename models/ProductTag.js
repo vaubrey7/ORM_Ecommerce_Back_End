@@ -6,6 +6,7 @@ class ProductTag extends Model {}
 
 ProductTag.init(
   {
+    // one more time defines colums woohoo
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,

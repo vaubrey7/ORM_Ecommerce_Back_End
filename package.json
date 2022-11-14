@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vaubrey7/ORM_Ecommerce_Back_End"
+    "url": "https://vaubrey7.github.io/ORM_Ecommerce_Back_End/"
   },
   "keywords": [],
   "author": "Vaughn Aubrey",
@@ -26,3 +26,4 @@
     "sequelize": "^5.21.7"
   }
 }
+
