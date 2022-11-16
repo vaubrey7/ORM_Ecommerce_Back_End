@@ -5,7 +5,7 @@ const { Category, Product } = require('../../models');
 
 router.get('/', (req, res) => {
   // find all categories
-  // be sure to include all it's associated Products
+  // be sure to include its associated Products
   Category.findAll(
     {
       include: [
@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   // find one category by its `id` value
-  // be sure to include all it's associated Products
+  // be sure to include its associated Products
   Category.findOne(
     {
       where: {
@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  // update a category by it's `id` value
+  // update a category by its `id` value
   Category.update(req.body,
     {
       where: {
@@ -87,7 +87,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  // delete a category by it's `id` value
+  // delete a category by its `id` value
   Category.destroy(
     {
       where: {

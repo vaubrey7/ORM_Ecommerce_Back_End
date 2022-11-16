@@ -6,7 +6,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // get all products
 router.get('/', (req, res) => {
   // find all products
-  // be sure to include it's associated Category and Tag data
+  // be sure to include its associated Category and Tag data
   Product.findAll(
     {
       include: [
@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
 // get one product
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
-  // be sure to include it's associated Category and Tag data
+  // be sure to include its associated Category and Tag data
   Product.findOne(
     {
       where: {
@@ -62,7 +62,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-// create's a new product
+// create new product
 router.post('/', (req, res) => {
    Product.create({
     product_name: req.body.product_name,
@@ -92,7 +92,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// update's a product
+// update product
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -116,12 +116,12 @@ router.put('/:id', (req, res) => {
             tag_id,
           };
         });
-      // figures out which to remove
+      // figure out which ones to remove
       const productTagsToRemove = productTags
         .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id))
         .map(({ id }) => id);
 
-      // runs both actions
+      // run both actions
       return Promise.all([
         ProductTag.destroy({ where: { id: productTagsToRemove } }),
         ProductTag.bulkCreate(newProductTags),

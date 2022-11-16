@@ -1,6 +1,5 @@
 -- DROP DATABASE
-DROP DATABASE IF EXISTS taco_ecommerce_db;
+DROP DATABASE IF EXISTS ecommerce_db;
 
 -- CREATE DATABASE
-CREATE DATABASE taco_ecommerce_db;
-
+CREATE DATABASE ecommerce_db;
