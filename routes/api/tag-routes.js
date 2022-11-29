@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
-// The `/api/tags` endpoint
+// The `/api/tags` endpoint yay!
 
 router.get('/', (req, res) => {
   // find all tags
-  // be sure to include its associated Product data
+  // WARNING: Make sure to include all the Product data
   Tag.findAll(
     {
       include: [
@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
-  // be sure to include its associated Product data
+  // WARNING: make sure to include all the Product data
   Tag.findOne(
     {
       where:{
@@ -53,7 +53,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // create a new tag
+  // create's a new tag.. are you still reading this? 
   Tag.create(req.body)
     .then((dbTagData) => {
       res.status(200).json(dbTagData);
@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
+  // update a tag's name by its `id` it's the same answers over and over and over. 
   Tag.update(req.body,
     {
       where: {
@@ -87,7 +87,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
+//...
   Tag.destroy(
     {
       where: {
